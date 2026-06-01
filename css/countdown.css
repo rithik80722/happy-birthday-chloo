@@ -1,0 +1,91 @@
+/* ===================== COUNTDOWN ===================== */
+.countdown-section {
+  position: relative;
+  z-index: 2;
+  background: var(--grad-section);
+  padding: var(--section-pad);
+  text-align: center;
+}
+
+.countdown-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--pink-400), var(--purple-300), transparent);
+}
+
+.countdown-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 2vw, 24px);
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.countdown-card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--card-radius);
+  padding: clamp(24px, 4vw, 48px) clamp(20px, 3.5vw, 44px);
+  min-width: clamp(90px, 14vw, 160px);
+  backdrop-filter: blur(20px);
+  animation: neon-border 4s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.countdown-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--grad-card);
+  pointer-events: none;
+}
+
+.countdown-number {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 7vw, 88px);
+  font-weight: 700;
+  line-height: 1;
+  background: var(--grad-pink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: transform 0.3s var(--ease-spring);
+}
+
+.countdown-card:hover .countdown-number {
+  transform: scale(1.08);
+}
+
+.countdown-label {
+  font-family: var(--font-sans);
+  font-size: clamp(9px, 1.2vw, 12px);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--pink-200);
+  margin-top: 10px;
+}
+
+.countdown-sep {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 6vw, 72px);
+  color: var(--pink-300);
+  animation: heartbeat 1.5s ease-in-out infinite;
+  line-height: 1;
+  margin-top: -10px;
+}
+
+.countdown-note {
+  font-family: var(--font-body);
+  font-size: clamp(15px, 1.8vw, 20px);
+  color: rgba(255,200,230,0.75);
+  font-style: italic;
+}
+
+/* Flip animation */
+.countdown-number.flip {
+  animation: scaleIn 0.3s var(--ease-spring);
+}

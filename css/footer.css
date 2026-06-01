@@ -1,0 +1,75 @@
+/* ===================== FOOTER ===================== */
+.footer {
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(160deg, #0d0d1a 0%, #1a0a2e 50%, #2d1b3d 100%);
+  padding: clamp(60px, 10vw, 120px) clamp(16px, 5vw, 80px);
+  text-align: center;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--pink-400), var(--purple-300), var(--pink-400), transparent);
+}
+
+.footer-hearts {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.footer-content {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.footer-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5vw, 64px);
+  font-style: italic;
+  background: linear-gradient(135deg, var(--white), var(--pink-300), var(--purple-300));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 24px;
+  animation: pulse-glow 3s ease-in-out infinite;
+  /* Fallback for animation on text: use text shadow instead of box-shadow */
+  filter: drop-shadow(0 0 20px rgba(255,77,148,0.4));
+}
+
+.footer-message {
+  font-family: var(--font-body);
+  font-size: clamp(16px, 2vw, 20px);
+  color: rgba(255,220,240,0.8);
+  line-height: 1.85;
+  margin-bottom: 36px;
+  font-weight: 300;
+}
+
+.footer-hearts-row {
+  font-size: clamp(20px, 3vw, 32px);
+  margin-bottom: 28px;
+  letter-spacing: 8px;
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+.footer-credit {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,180,220,0.5);
+}
+
+.footer-heart-particle {
+  position: absolute;
+  font-size: clamp(14px, 2vw, 24px);
+  pointer-events: none;
+  animation: heart-float var(--fdur) ease-out var(--fdelay) infinite;
+}

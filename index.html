@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday, My Love💕</title> 
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Playfair+Display:ital,wght@0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/countdown.css" />
+  <link rel="stylesheet" href="css/gallery.css" />
+  <link rel="stylesheet" href="css/timeline.css" />
+  <link rel="stylesheet" href="css/love.css" />
+  <link rel="stylesheet" href="css/music.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/popup.css" />
+</head>
+<body>
+
+  <!-- CURSOR GLOW -->
+  <div id="cursor-glow"></div>
+
+  <!-- CANVAS: Fireworks & Particles -->
+  <canvas id="fireworks-canvas"></canvas>
+
+  <!-- FLOATING ELEMENTS -->
+  <div class="floating-hearts-bg" id="floating-hearts-bg"></div>
+  <div class="stars-bg" id="stars-bg"></div>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="hero" class="hero-section">
+    <div class="rose-petals-container" id="rose-petals"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-subtitle animate-fade-up" style="animation-delay:0.3s">✨ A message just for you ✨</p>
+      <h1 class="hero-title animate-fade-up" style="animation-delay:0.6s">
+        Happy Birthday,<br /><em class="hero-name">My Love Sivaranjani</em>
+      </h1>
+      <p class="hero-message animate-fade-up" style="animation-delay:0.9s">
+        Today the whole universe pauses to celebrate the most extraordinary soul —<br class="br-desktop" /> you, my darling. Every star, every heartbeat, every breath of wind whispers your name.
+      </p>
+      <div class="hero-buttons animate-fade-up" style="animation-delay:1.2s">
+        <button class="btn-primary" id="birthday-btn" onclick="triggerConfetti()">🎂 Celebrate!</button>
+        <button class="btn-ghost" onclick="document.getElementById('countdown').scrollIntoView({behavior:'smooth'})">Explore Our Story ↓</button>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- ===================== COUNTDOWN ===================== -->
+  <section id="countdown" class="countdown-section">
+    <div class="section-header">
+      <p class="section-eyebrow">counting every second</p>
+      <h2 class="section-title">Until Your Special Day</h2>
+    </div>
+    <div class="countdown-grid">
+      <div class="countdown-card" data-unit="days">
+        <div class="countdown-number" id="cd-days">00</div>
+        <div class="countdown-label">Days</div>
+      </div>
+      <div class="countdown-sep">:</div>
+      <div class="countdown-card" data-unit="hours">
+        <div class="countdown-number" id="cd-hours">00</div>
+        <div class="countdown-label">Hours</div>
+      </div>
+      <div class="countdown-sep">:</div>
+      <div class="countdown-card" data-unit="minutes">
+        <div class="countdown-number" id="cd-minutes">00</div>
+        <div class="countdown-label">Minutes</div>
+      </div>
+      <div class="countdown-sep">:</div>
+      <div class="countdown-card" data-unit="seconds">
+        <div class="countdown-number" id="cd-seconds">00</div>
+        <div class="countdown-label">Seconds</div>
+      </div>
+    </div>
+    <p class="countdown-note">June 1st — the day the world got its greatest gift 🌹</p>
+  </section>
+  <!-- 🌹 Countdown Rose Shower -->
+<style>
+  #countdown {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .countdown-rose {
+    position: absolute;
+    top: -60px;
+    font-size: 28px;
+    pointer-events: none;
+    z-index: 2;
+    animation: countdownFall linear forwards;
+    opacity: 0.9;
+    filter: drop-shadow(0 0 8px rgba(255, 105, 180, 0.8));
+  }
+
+  @keyframes countdownFall {
+    0% {
+      transform: translateY(-60px) rotate(0deg);
+      opacity: 0;
+    }
+
+    10% {
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(120vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+</style>
+
+<script>
+  const countdownSection = document.getElementById("countdown");
+
+  function createCountdownRose() {
+    const rose = document.createElement("div");
+    rose.classList.add("countdown-rose");
+    rose.innerHTML = "🌹";
+
+    rose.style.left = Math.random() * countdownSection.offsetWidth + "px";
+    rose.style.animationDuration = (4 + Math.random() * 3) + "s";
+    rose.style.fontSize = (18 + Math.random() * 20) + "px";
+
+    countdownSection.appendChild(rose);
+
+    setTimeout(() => {
+      rose.remove();
+    }, 7000);
+  }
+
+  setInterval(createCountdownRose, 400);
+</script>
+
+  <!-- ===================== GALLERY: POLAROID MEMORIES ===================== -->
+  <section id="memories" class="gallery-section">
+    <div class="section-header">
+      <p class="section-eyebrow">our beautiful memories</p>
+      <h2 class="section-title">Polaroid Moments</h2>
+    </div>
+    <div class="polaroid-grid">
+
+      <div class="polaroid animate-on-scroll" style="--r:-5deg">
+        <div class="polaroid-img-wrap">
+          <img src="images/jan.jpg" alt="Our memory" onerror="this.src='https://placehold.co/300x320/ffb6c1/fff?text=📸+Our+Photo'" />
+        </div>
+        <p class="polaroid-caption">That magical first smile ✨</p>
+        <span class="polaroid-date">ya chloo pulla</span>
+      </div>
+
+      <div class="polaroid animate-on-scroll" style="--r:4deg">
+        <div class="polaroid-img-wrap">
+          <img src="images/feb.jpeg" alt="Our memory" onerror="this.src='https://placehold.co/300x320/c8a2c8/fff?text=📸+Add+Photo'" />
+        </div>
+        <p class="polaroid-caption">Eye with you 🌊</p>
+        <span class="polaroid-date">ya pattu pulla</span>
+      </div>
+
+      <div class="polaroid animate-on-scroll" style="--r:-3deg">
+        <div class="polaroid-img-wrap">
+          <img src="images/mar.jpg" alt="Our memory" onerror="this.src='https://placehold.co/300x320/dda0dd/fff?text=📸+Add+Photo'" />
+        </div>
+        <p class="polaroid-caption">Laughing forever 😂❤️</p>
+        <span class="polaroid-date">ya thangoo pulla</span>
+      </div>
+
+      <div class="polaroid animate-on-scroll" style="--r:6deg">
+        <div class="polaroid-img-wrap">
+          <img src="images/apr.jpg" alt="Our memory" onerror="this.src='https://placehold.co/300x320/ff9eb5/fff?text=📸+Add+Photo'" />
+        </div>
+        <p class="polaroid-caption">Golden hour with you 🌅</p>
+        <span class="polaroid-date">ya setta pulla</span>
+      </div>
+
+      <div class="polaroid animate-on-scroll" style="--r:-4deg">
+        <div class="polaroid-img-wrap">
+          <img src="images/hands.jpg" alt="Our memory" onerror="this.src='https://placehold.co/300x320/e6a8d7/fff?text=📸+Add+Photo'" />
+        </div>
+        <p class="polaroid-caption">You & me always 💫</p>
+        <span class="polaroid-date">Dec 2023</span>
+      </div>
+
+      <div class="polaroid animate-on-scroll" style="--r:3deg">
+        <div class="polaroid-img-wrap">
+          <img src="images/smile.jpg" alt="Our memory" onerror="this.src='https://placehold.co/300x320/ffafd7/fff?text=📸+Add+Photo'" />
+        </div>
+        <p class="polaroid-caption">Happiest days 🌸</p>
+        <span class="polaroid-date">Feb 2024</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== SLIDESHOW CAROUSEL ===================== -->
+  <section id="slideshow" class="slideshow-section">
+    <div class="section-header">
+      <p class="section-eyebrow">our story in frames</p>
+      <h2 class="section-title">Moments You Cherish</h2>
+    </div>
+    <div class="carousel-wrapper">
+      <div class="carousel-track" id="carousel-track">
+        <div class="carousel-slide active">
+          <img src="images/siva.jpg" onerror="this.src='https://placehold.co/800x500/2d1b3d/ffb6c1?text=🌹+Your+Photo+Here'" alt="Slide 1" />
+          <div class="slide-caption">
+            <h3>your little adventures</h3>
+            <p>Everything is my world.</p>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="images/green.jpg" onerror="this.src='https://placehold.co/800x500/1a0a2e/dda0dd?text=💜+Your+Photo+Here'" alt="Slide 2" />
+          <div class="slide-caption">
+            <h3>Princess meets Flowers</h3>
+            <p>Every trip, every walk, every coffee — beautiful because you were there.</p>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="images/mine.jpg" onerror="this.src='https://placehold.co/800x500/2d1b3d/ff9eb5?text=💕+Your+Photo+Here'" alt="Slide 3" />
+          <div class="slide-caption">
+            <h3>Smiles that light up the world</h3>
+            <p>Your laugh is my favourite song. Always and forever.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn prev" id="carousel-prev">‹</button>
+      <button class="carousel-btn next" id="carousel-next">›</button>
+      <div class="carousel-dots" id="carousel-dots"></div>
+    </div>
+  </section>
+
+  <!-- ===================== FLIP-CARD MEMORIES ===================== -->
+  <section id="flip-memories" class="flip-section">
+    <div class="section-header">
+      <p class="section-eyebrow">flip to discover</p>
+      <h2 class="section-title">Hidden Love Notes</h2>
+    </div>
+    <div class="flip-grid">
+
+      <div class="flip-card animate-on-scroll">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="images/us.jpg" onerror="this.src='https://placehold.co/280x360/4a1942/ffb6c1?text=📸'" alt="Memory" />
+            <span class="flip-hint">Hover to reveal 💌</span>
+          </div>
+          <div class="flip-back">
+            <div class="flip-back-content">
+              <span class="flip-emoji">🌹</span>
+              <h3>You Are My Home</h3>
+              <p>Ne tha chloo ya uulaagam ona patha sec la erundhu ya life oree butterflyss aa marichi  .</p>
+              <span class="flip-date">Always</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card animate-on-scroll">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="images/beach.jpg" onerror="this.src='https://placehold.co/280x360/1a0a2e/dda0dd?text=📸'" alt="Memory" />
+            <span class="flip-hint">Hover to reveal 💌</span>
+          </div>
+          <div class="flip-back">
+            <div class="flip-back-content">
+              <span class="flip-emoji">⭐</span>
+              <h3>My Brightest Star</h3>
+              <p>Onoda kai ya pudikura apo laa evlo periya downfall aa erundalu elathaiyum within sec la break panidu.</p>
+              <span class="flip-date">Every night</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card animate-on-scroll">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="images/teeth.jpg" onerror="this.src='https://placehold.co/280x360/3d0a3d/e6a8d7?text=📸'" alt="Memory" />
+            <span class="flip-hint">Hover to reveal 💌</span>
+          </div>
+          <div class="flip-back">
+            <div class="flip-back-content">
+              <span class="flip-emoji">🦋</span>
+              <h3>You Make Me Fly</h3>
+              <p>Chloo oo kuda erukum bodhu na lighter, braver, aprm romba stronge aa feel panuva. You changed everything in my life di pattuuuu.</p>
+              <span class="flip-date">Since day one</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card animate-on-scroll">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="images/my.jpg" onerror="this.src='https://placehold.co/280x360/2d1b3d/ff9eb5?text=📸'" alt="Memory" />
+            <span class="flip-hint">Hover to reveal 💌</span>
+          </div>
+          <div class="flip-back">
+            <div class="flip-back-content">
+              <span class="flip-emoji">💫</span>
+              <h3>Forever Isn't Enough</h3>
+              <p>World la evolo peru erundhalu ona mari oru kind heart yarukume ela jiloo ne romba alaga eruka jiloo oo eyes is soo cute jiloo.</p>
+              <span class="flip-date">Until eternity</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== LOVE STORY TIMELINE ===================== -->
+  <section id="timeline" class="timeline-section">
+    <div class="section-header">
+      <p class="section-eyebrow">the story of us</p>
+      <h2 class="section-title">Our Love Story</h2>
+    </div>
+    <div class="timeline-container">
+
+      <div class="timeline-item left animate-on-scroll">
+        <div class="timeline-dot">💫</div>
+        <div class="timeline-card">
+          <img src="images/1stmeet.jpg" onerror="this.src='https://placehold.co/400x200/4a1942/ffb6c1?text=📸+First+Meet'" alt="First Meet" />
+          <div class="timeline-body">
+            <span class="timeline-date">✨ The Beginning</span>
+            <h3>The Moment We Met</h3>
+            <p>Indha universe-e namma rendu perayum serka romba azhaga plan panniruchu. Andha naal dhaan en life fulla maari pochu. Namma first meet aana andha moment enakku eppovume special-ah dhaan irukkum.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item right animate-on-scroll">
+        <div class="timeline-dot">💬</div>
+        <div class="timeline-card">
+          <img src="images/1stchat.jpg" onerror="this.src='https://placehold.co/400x200/1a0a2e/dda0dd?text=📸+First+Chat'" alt="First Chat" />
+          <div class="timeline-body">
+            <span class="timeline-date">💬 First Words</span>
+            <h3>Our Love Starting movement</h3>
+            <p>I remember every word. Every laugh. Every pause. Our first chat felt like coming home to a place I'd never been but always knew.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item left animate-on-scroll">
+        <div class="timeline-dot">🌹</div>
+        <div class="timeline-card">
+          <img src="images/1stdate.jpg" onerror="this.src='https://placehold.co/400x200/2d1b3d/ff9eb5?text=📸+First+Date'" alt="First Date" />
+          <div class="timeline-body">
+            <span class="timeline-date">🌹 The Magic</span>
+            <h3>Our First Date</h3>
+            <p>Nervous hearts, stolen glances, and the feeling that something extraordinary was beginning. Add your own date memory here.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item right animate-on-scroll">
+        <div class="timeline-dot">🌊</div>
+        <div class="timeline-card">
+          <img src="images/1st trip.jpg" onerror="this.src='https://placehold.co/400x200/0d0d1a/c8a2c8?text=📸+Our+Trip'" alt="Trip" />
+          <div class="timeline-body">
+            <span class="timeline-date">🌊 Adventures</span>
+            <h3>Our First Trip Together</h3>
+            <p>Indha world ah explore panradhu romba beautiful. Aana adha un kooda explore panradhu dhaan enakku ellame. Namma favourite travel memory ah inga add pannunga ❤️
+.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item left animate-on-scroll">
+        <div class="timeline-dot">😂</div>
+        <div class="timeline-card">
+          <img src="images/funny.jpg" onerror="this.src='https://placehold.co/400x200/3d0a3d/e6a8d7?text=📸+Funny+Moment'" alt="Funny" />
+          <div class="timeline-body">
+            <span class="timeline-date">😂 Laughs</span>
+            <h3>That Hilarious Moment</h3>
+            <p>We still laugh about it to this day. Your laugh is the best sound in the world. Replace with your own funny memory!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item right animate-on-scroll">
+        <div class="timeline-dot">🔮</div>
+        <div class="timeline-card">
+        <div class="scratch-card">
+          <!-- 🎉 Surprise Papers -->
+<div class="scratch-confetti left" id="scratchLeft"></div>
+<div class="scratch-confetti right" id="scratchRight"></div>
+
+  <!-- Hidden Real Image -->
+  <img 
+    src="images/Future.jpg"
+    class="future-hidden-img"
+    alt="Future"
+  />
+
+  <!-- Scratch Layer -->
+  <canvas id="scratchCanvas"></canvas>
+
+</div>
+          <div class="timeline-body">
+            <span class="timeline-date">🔮 Forever Our Future</span>
+            <h3>Our Future Dreams Together</h3>
+            <p>I see our whole beautiful future and I cannot wait. More adventures, more love, more laughter. You and me against the world.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== REASONS I LOVE YOU ===================== -->
+  <section id="reasons" class="reasons-section">
+    <div class="section-header">
+      <p class="section-eyebrow">from my heart</p>
+      <h2 class="section-title">Reasons I Love You</h2>
+    </div>
+    <div class="reasons-grid">
+
+      <div class="reason-card animate-on-scroll" style="--delay:0s">
+        <span class="reason-icon">😊</span>
+        <h3>Your Smile</h3>
+        <p>Onoda alagana smile apidiye glow golden in my life chloo.Your One smile is enough for me da thangoo.</p>
+      </div>
+      <div class="reason-card animate-on-scroll" style="--delay:0.1s">
+        <span class="reason-icon">💪</span>
+        <h3>Your Strength</h3>
+        <p>Onoda strenght tha chlo ena endha life aa oru crt path create pani kuptu pogudhu ne the ennoda guidelines.</p>
+      </div>
+      <div class="reason-card animate-on-scroll" style="--delay:0.2s">
+        <span class="reason-icon">🧠 </span>
+        <h3>Your Mind</h3>
+        <p>Conversations laa ookuda oru sanda vandha epidi tha crt aa pesura thrl ela points yum nachinu pesuva ya ponu. Onoda thoughts elame Sema alaga eruku,Onoda surprising,Onoda endless love.</p>
+      </div>
+      <div class="reason-card animate-on-scroll" style="--delay:0.3s">
+        <span class="reason-icon">💖</span>
+        <h3>Your Heart</h3>
+        <p>The way you love — IS cute ona mari love pani na yaraiyum pathadhu ela endha gendration la — Enaku kedacha pokichammmm di nee.</p>
+      </div>
+      <div class="reason-card animate-on-scroll" style="--delay:0.4s">
+        <span class="reason-icon">😂</span>
+        <h3>Your Laugh</h3>
+        <p>Aiyooo oo siripu sollava venu oo pallu katunale na flat di kutta <br>(31 1/2)Sorry jilooo my favv adha solta manichiru.</p>
+      </div>
+      <div class="reason-card animate-on-scroll" style="--delay:0.5s">
+        <span class="reason-icon">✨</span>
+        <h3>Everything Else</h3>
+        <p>Sollitee pogala chloo endless aa no end for your love and pasaam . Enga ponalu onakaga na erupa amma umaaaaaaaaa...</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== LOVE LETTER (TYPING ANIMATION) ===================== -->
+  <section id="letter" class="letter-section">
+    <div class="letter-card animate-on-scroll">
+      <div class="letter-header">
+        <span class="letter-seal">💌</span>
+        <p class="letter-to">My Dearest Amma,</p>
+      </div>
+      <div class="letter-body">
+        <p id="typing-text" class="typing-text"></p>
+        <span class="typing-cursor">|</span>
+      </div>
+      <div class="letter-footer">
+        <p>Forever yours,</p>
+        <em class="letter-sign">Rithikvasan 💕</em>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ROMANTIC QUOTES ===================== -->
+  <section id="quotes" class="quotes-section">
+    <div class="section-header">
+      <p class="section-eyebrow">words for you</p>
+      <h2 class="section-title">From Poets to You</h2>
+    </div>
+    <div class="quotes-carousel" id="quotes-carousel">
+      <div class="quote-item active">
+        <blockquote>"I would rather spend one lifetime with you, than face all the ages of this world alone."</blockquote>
+        <cite>— J.R.R. Tolkien</cite>
+      </div>
+      <div class="quote-item">
+        <blockquote>"Whatever our souls are made of, yours and mine are the same."</blockquote>
+        <cite>— Emily Brontë</cite>
+      </div>
+      <div class="quote-item">
+        <blockquote>"I have waited for this opportunity for more than half a century, to repeat to you once again my vow of eternal fidelity and everlasting love."</blockquote>
+        <cite>— Gabriel García Márquez</cite>
+      </div>
+      <div class="quote-item">
+        <blockquote>"She is everything I need that I never knew I wanted."</blockquote>
+        <cite>— Amos Lee</cite>
+      </div>
+      <div class="quote-item">
+        <blockquote>"You are my today and all of my tomorrows."</blockquote>
+        <cite>— Leo Christopher</cite>
+      </div>
+    </div>
+    <div class="quotes-nav">
+      <button id="q-prev">‹</button>
+      <button id="q-next">›</button>
+    </div>
+  </section>
+
+  <!-- ===================== MUSIC PLAYER ===================== -->
+  <section id="music" class="music-section">
+    <div class="music-player animate-on-scroll">
+      <div class="music-disc" id="music-disc">
+        <div class="disc-inner">
+          <span>🎵</span>
+        </div>
+      </div>
+      <div class="music-info">
+        <h3 class="music-title">Our Song</h3>
+        <p class="music-artist">Your Favourite Artist — Add Audio Below</p>
+        <!-- 🎵 HOW TO ADD MUSIC:
+            1. Place your audio file (e.g., song.mp3) in the project root
+            2. Uncomment the line below and set the src to your file path
+            3. The player controls will work automatically -->
+        <audio id="bg-audio" loop src="images/song.mp3"></audio>
+        <audio id="bg-audio" loop></audio>
+      </div>
+      <div class music id ="special-audio controls">
+        <button class="music-btn" id="play-btn" onclick="toggleMusic()">▶ Play</button>
+        <div class="music-visualizer" id="music-visualizer">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+      <p class="music-note">🎵 Add your audio file path in index.html (line ~240)</p>
+    </div>
+  </section>
+
+  <!-- ===================== SECRET SURPRISE BUTTON ===================== -->
+  <section id="surprise-section" class="surprise-section">
+    <div class="surprise-content animate-on-scroll">
+      <p class="section-eyebrow">Happiest Birthday Babee pullaaa</p>
+      <h2 class="section-title">A Secret Just for You</h2>
+      <p>Kanna Mudu chloo, take a breath chloo, and press the button below 💕</p>
+      <button class="btn-surprise" id="surprise-btn" onclick="openSurprise()">
+        <span class="surprise-btn-inner">🔮 Open Your Surprise</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer id="footer" class="footer">
+    <div class="footer-hearts" id="footer-hearts"></div>
+    <div class="footer-content">
+      <h2 class="footer-title">Happy Birthday, My amma 🌹</h2>
+      <p class="footer-message">Ovvoru candle-ah nee blow pannum pothu, un aasai ellam nijamaa nadakku. Indha varusham un life fula nariya love na katuva jiloo, oo siripu epome alaga eruku, malaigal pola anbu niraya varattum. Indha ulagathula irukkura ella azhagana vishayangalukum nee thagudhiyana ponnu amma.</p>
+      <div class="footer-hearts-row">💕 💖 💕 💖 💕 💖 💕</div>
+      <p class="footer-credit">Made with infinite love, just for you ✨</p>
+    </div>
+  </footer>
+
+  <!-- ===================== SURPRISE POPUP ===================== -->
+  <div class="popup-overlay" id="popup-overlay" onclick="closeSurprise(event)">
+    <div class="popup-card" id="popup-card">
+      <button class="popup-close" onclick="closeSurprise()">×</button>
+      <div class="popup-fireworks" id="popup-fireworks"></div>
+      <div class="popup-emoji-row">🎉 🌹 💖 🎂 ✨ 🥂</div>
+      <h2 class="popup-title">Happy Birthday!</h2>
+      <div class="popup-message">
+        <p>This is your secret message, my love. 💌</p>
+        <p>Un kooda irukkura ovvoru naalum enakku oru celebration madhiri dhaan. Inniku world un birthday ah celebrate panradhu… aana nee evlo special nu naan already therinjavan.
+
+Words la solla mudiyadha alavukku naan unna love panren. Inniku, naalai, and every lifetime la kooda nee dhaan en forever.</p>
+        <p></p>
+        <p class="popup-sign">— Yours, always 💕</p>
+      </div>
+      <button class="popup-cta" onclick="closeSurprise()">Close with Love 💖</button>
+    </div>
+  </div>
+
+  <!-- Confetti container -->
+  <div id="confetti-container"></div>
+<!-- ================= IMAGE VIEW POPUP ================= -->
+<!-- ================= IMAGE VIEW POPUP ================= -->
+<div class="image-popup" id="imagePopup">
+
+  <!-- 🎉 Gift Papers -->
+  <div class="gift-papers left" id="giftLeft"></div>
+  <div class="gift-papers right" id="giftRight"></div>
+
+  <span class="close-popup" id="closePopup">&times;</span>
+
+  <img class="popup-img" id="popupImg" src="" alt="Preview" />
+
+  <div class="popup-caption" id="popupCaption"></div>
+</div>
+  <!-- Scripts -->
+  <script src="js/particles.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/music.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+const canvas = document.getElementById("starsCanvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let stars = [];
+const mouse = {
+  x: null,
+  y: null,
+  radius: 140
+};
+
+window.addEventListener("mousemove", (e) => {
+  mouse.x = e.x;
+  mouse.y = e.y;
+});
+
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  initStars();
+});
+
+class Star {
+  constructor() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+
+    this.size = Math.random() * 2 + 1;
+
+    this.speedX = (Math.random() - 0.5) * 0.4;
+    this.speedY = (Math.random() - 0.5) * 0.4;
+  }
+
+  update() {
+
+    this.x += this.speedX;
+    this.y += this.speedY;
+
+    if (this.x > canvas.width || this.x < 0) {
+      this.speedX *= -1;
+    }
+
+    if (this.y > canvas.height || this.y < 0) {
+      this.speedY *= -1;
+    }
+  }
+
+  draw() {
+
+    ctx.beginPath();
+
+    ctx.arc(
+      this.x,
+      this.y,
+      this.size,
+      0,
+      Math.PI * 2
+    );
+
+    ctx.fillStyle = "rgba(255,255,255,0.9)";
+    ctx.shadowColor = "#ff66cc";
+    ctx.shadowBlur = 12;
+
+    ctx.fill();
+  }
+}
+
+function initStars() {
+
+  stars = [];
+
+  for (let i = 0; i < 120; i++) {
+    stars.push(new Star());
+  }
+}
+
+function connectStars() {
+
+  for (let a = 0; a < stars.length; a++) {
+
+    for (let b = a; b < stars.length; b++) {
+
+      const dx = stars[a].x - stars[b].x;
+      const dy = stars[a].y - stars[b].y;
+
+      const distance =
+        dx * dx + dy * dy;
+
+      if (distance < 12000) {
+
+        ctx.beginPath();
+
+        ctx.strokeStyle =
+          "rgba(255,105,180,0.15)";
+
+        ctx.lineWidth = 1;
+
+        ctx.moveTo(
+          stars[a].x,
+          stars[a].y
+        );
+
+        ctx.lineTo(
+          stars[b].x,
+          stars[b].y
+        );
+
+        ctx.stroke();
+      }
+
+      // Mouse interaction
+      const mouseDx = stars[a].x - mouse.x;
+      const mouseDy = stars[a].y - mouse.y;
+
+      const mouseDistance =
+        mouseDx * mouseDx +
+        mouseDy * mouseDy;
+
+      if (mouseDistance < mouse.radius * mouse.radius) {
+
+        ctx.beginPath();
+
+        ctx.strokeStyle =
+          "rgba(255,255,255,0.4)";
+
+        ctx.lineWidth = 1.2;
+
+        ctx.moveTo(
+          stars[a].x,
+          stars[a].y
+        );
+
+        ctx.lineTo(
+          mouse.x,
+          mouse.y
+        );
+
+        ctx.stroke();
+      }
+    }
+  }
+}
+
+function animateStars() {
+
+  ctx.clearRect(
+    0,
+    0,
+    canvas.width,
+    canvas.height
+  );
+
+  stars.forEach((star) => {
+    star.update();
+    star.draw();
+  });
+
+  connectStars();
+
+  requestAnimationFrame(animateStars);
+}
+
+initStars();
+animateStars();
+</script>
+<script>
+
+const bgMusic =
+  document.getElementById("bg-audio");
+
+const specialAudio =
+  document.getElementById("special-audio");
+
+// 🎵 Background Volume
+bgMusic.volume = 100;
+
+// 🎵 Auto Play Background Music
+window.addEventListener("load", () => {
+
+  const playPromise = bgMusic.play();
+
+  if (playPromise !== undefined) {
+
+    playPromise.catch(() => {
+
+      // Browser autoplay fix
+      document.body.addEventListener(
+        "click",
+        () => {
+          bgMusic.play();
+        },
+        { once: true }
+      );
+
+    });
+
+  }
+
+});
+
+// 💖 Stop BG Music When Special Audio Plays
+specialAudio.addEventListener(
+  "play",
+  () => {
+
+    bgMusic.pause();
+
+  }
+);
+
+// 💖 Resume BG Music After Special Audio Ends
+specialAudio.addEventListener(
+  "ended",
+  () => {
+
+    bgMusic.play();
+
+  }
+);
+
+// 💖 Resume If Paused
+specialAudio.addEventListener(
+  "pause",
+  () => {
+
+    if (!specialAudio.ended) {
+
+      bgMusic.play();
+
+    }
+  }
+);
+
+</script>
+</body>
+<!-- 🎵 Background Music -->
+<audio id="bg-audio" loop>
+  <source src="images/bg song.mp3" type="audio/mp3">
+</audio>
+<!-- 🌌 Romantic Stars Background -->
+<canvas id="starsCanvas"></canvas>
+<script>
+  const scratchCanvas = document.getElementById("scratchCanvas");
+
+  if (scratchCanvas) {
+
+    const ctx = scratchCanvas.getContext("2d");
+
+    const scratchCard =
+      document.querySelector(".scratch-card");
+
+    const scratchLeft =
+      document.getElementById("scratchLeft");
+
+    const scratchRight =
+      document.getElementById("scratchRight");
+
+    let surpriseTriggered = false;
+
+    function resizeCanvas() {
+
+      scratchCanvas.width =
+        scratchCard.offsetWidth;
+
+      scratchCanvas.height =
+        scratchCard.offsetHeight;
+
+      const gradient =
+        ctx.createLinearGradient(
+          0,
+          0,
+          scratchCanvas.width,
+          scratchCanvas.height
+        );
+
+      gradient.addColorStop(0, "#ff4da6");
+      gradient.addColorStop(1, "#7b2ff7");
+
+      ctx.fillStyle = gradient;
+
+      ctx.fillRect(
+        0,
+        0,
+        scratchCanvas.width,
+        scratchCanvas.height
+      );
+
+      ctx.fillStyle = "white";
+
+      ctx.font = "bold 34px serif";
+
+      ctx.textAlign = "center";
+
+      ctx.fillText(
+        "Scratch Pannu chloo 💖",
+        scratchCanvas.width / 2,
+        scratchCanvas.height / 2
+      );
+    }
+
+    resizeCanvas();
+
+    let isScratching = false;
+
+    function scratch(x, y) {
+
+      ctx.globalCompositeOperation =
+        "destination-out";
+
+      ctx.beginPath();
+
+      ctx.arc(x, y, 35, 0, Math.PI * 2);
+
+      ctx.fill();
+
+      checkScratchPercent();
+    }
+
+    // 🎉 Create Color Paper
+    function createPaper(container) {
+
+      const paper =
+        document.createElement("div");
+
+      paper.classList.add("scratch-paper");
+
+      const colors = [
+        "#ff4da6",
+        "#7b2ff7",
+        "#ffd700",
+        "#00e5ff",
+        "#ff5e5e",
+        "#ffffff"
+      ];
+
+      paper.style.background =
+        colors[
+          Math.floor(
+            Math.random() * colors.length
+          )
+        ];
+
+      paper.style.left =
+        Math.random() * 100 + "%";
+
+      paper.style.animationDuration =
+        3 + Math.random() * 3 + "s";
+
+      paper.style.transform =
+        `rotate(${Math.random() * 360}deg)`;
+
+      container.appendChild(paper);
+
+      setTimeout(() => {
+        paper.remove();
+      }, 6000);
+    }
+
+    // 🎉 Surprise Burst
+    function startSurprisePapers() {
+
+      let count = 0;
+
+      const interval = setInterval(() => {
+
+        createPaper(scratchLeft);
+
+        createPaper(scratchRight);
+
+        count++;
+
+        if (count > 80) {
+          clearInterval(interval);
+        }
+
+      }, 80);
+    }
+
+    // ✅ Check Scratch Reveal %
+    function checkScratchPercent() {
+
+      if (surpriseTriggered) return;
+
+      const pixels =
+        ctx.getImageData(
+          0,
+          0,
+          scratchCanvas.width,
+          scratchCanvas.height
+        );
+
+      let transparent = 0;
+
+      for (
+        let i = 3;
+        i < pixels.data.length;
+        i += 4
+      ) {
+        if (pixels.data[i] === 0) {
+          transparent++;
+        }
+      }
+
+      const percent =
+        transparent /
+        (pixels.data.length / 4);
+
+      // 🎉 Trigger at 55%
+      if (percent > 0.55) {
+
+        surpriseTriggered = true;
+
+        startSurprisePapers();
+      }
+    }
+
+    // Mouse Events
+    scratchCanvas.addEventListener(
+      "mousedown",
+      () => {
+        isScratching = true;
+      }
+    );
+
+    scratchCanvas.addEventListener(
+      "mouseup",
+      () => {
+        isScratching = false;
+      }
+    );
+
+    scratchCanvas.addEventListener(
+      "mousemove",
+      (e) => {
+
+        if (!isScratching) return;
+
+        const rect =
+          scratchCanvas.getBoundingClientRect();
+
+        scratch(
+          e.clientX - rect.left,
+          e.clientY - rect.top
+        );
+      }
+    );
+
+    // Mobile Touch
+    scratchCanvas.addEventListener(
+      "touchstart",
+      () => {
+        isScratching = true;
+      }
+    );
+
+    scratchCanvas.addEventListener(
+      "touchend",
+      () => {
+        isScratching = false;
+      }
+    );
+
+    scratchCanvas.addEventListener(
+      "touchmove",
+      (e) => {
+
+        if (!isScratching) return;
+
+        e.preventDefault();
+
+        const rect =
+          scratchCanvas.getBoundingClientRect();
+
+        const touch = e.touches[0];
+
+        scratch(
+          touch.clientX - rect.left,
+          touch.clientY - rect.top
+        );
+      }
+    );
+
+    window.addEventListener(
+      "resize",
+      resizeCanvas
+    );
+
+  }
+</script>
+<script>
+  const polaroidImages = document.querySelectorAll(".polaroid img");
+
+  const imagePopup = document.getElementById("imagePopup");
+  const popupImg = document.getElementById("popupImg");
+  const popupCaption = document.getElementById("popupCaption");
+  const closePopup = document.getElementById("closePopup");
+
+  const giftLeft = document.getElementById("giftLeft");
+  const giftRight = document.getElementById("giftRight");
+
+  let giftInterval;
+
+  // 🎉 Create Gift Paper
+  function createGiftPaper(sideContainer) {
+    const paper = document.createElement("div");
+    paper.classList.add("gift-paper");
+
+    const gifts = ["🎉", "🎊", "💖", "🌸", "✨", "💝"];
+
+    paper.innerHTML =
+      gifts[Math.floor(Math.random() * gifts.length)];
+
+    paper.style.left = Math.random() * 100 + "%";
+
+    paper.style.animationDuration =
+      3 + Math.random() * 3 + "s";
+
+    paper.style.fontSize =
+      18 + Math.random() * 25 + "px";
+
+    sideContainer.appendChild(paper);
+
+    setTimeout(() => {
+      paper.remove();
+    }, 6000);
+  }
+
+  // Open Popup
+  polaroidImages.forEach((img) => {
+    img.addEventListener("click", () => {
+      imagePopup.classList.add("show");
+
+      popupImg.src = img.src;
+
+      const caption =
+        img.closest(".polaroid")
+          .querySelector(".polaroid-caption");
+
+      popupCaption.innerText = caption
+        ? caption.innerText
+        : "Beautiful Memory 💕";
+
+      // 🎉 Start Gift Paper Animation
+      giftInterval = setInterval(() => {
+        createGiftPaper(giftLeft);
+        createGiftPaper(giftRight);
+      }, 180);
+    });
+  });
+
+  // Close Popup
+  function closeImagePopup() {
+    imagePopup.classList.remove("show");
+
+    clearInterval(giftInterval);
+
+    giftLeft.innerHTML = "";
+    giftRight.innerHTML = "";
+  }
+
+  closePopup.addEventListener("click", closeImagePopup);
+
+  imagePopup.addEventListener("click", (e) => {
+    if (e.target === imagePopup) {
+      closeImagePopup();
+    }
+  });
+</script>
+</html>
